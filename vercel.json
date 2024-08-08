@@ -13,16 +13,5 @@
       "path": "/api/token?action=refresh",
       "schedule": "0 0 * * *"
     }
-  ],
-  "functions": {
-    "api/token.js": {
-      "maxDuration": 60
-    },
-    "api/audio-speech.js": {
-      "maxDuration": 60
-    },
-    "api/*.js": {
-      "maxDuration": 60
-    }
-  }
+  ]
 }
