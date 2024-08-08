@@ -1,17 +1,28 @@
 {
-    "version": 2,
-    "builds": [
-      { "src": "api/**/*.js", "use": "@vercel/node" }
-    ],
-    "routes": [
-      { "src": "/v1/token", "dest": "/api/token.js" },
-      { "src": "/v1/audio/speech", "dest": "/api/audio-speech.js" },
-      { "src": "/", "dest": "/api/audio-speech.js" }
-    ],
-    "crons": [
-      {
-        "path": "/api/token?action=refresh",
-        "schedule": "0 0 * * *"
-      }
-    ]
+  "version": 2,
+  "builds": [
+    { "src": "api/**/*.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/v1/token", "dest": "/api/token.js" },
+    { "src": "/v1/audio/speech", "dest": "/api/audio-speech.js" },
+    { "src": "/", "dest": "/api/audio-speech.js" }
+  ],
+  "crons": [
+    {
+      "path": "/api/token?action=refresh",
+      "schedule": "0 0 * * *"
+    }
+  ],
+  "functions": {
+    "api/token.js": {
+      "maxDuration": 60
+    },
+    "api/audio-speech.js": {
+      "maxDuration": 60
+    },
+    "api/*.js": {
+      "maxDuration": 60
+    }
   }
+}
