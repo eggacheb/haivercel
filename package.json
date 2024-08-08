@@ -4,7 +4,11 @@
   "description": "Hailuo API with load balancing",
   "main": "api/audio-speech.js",
   "dependencies": {
-    "@vercel/kv": "^0.2.1"
+    "@vercel/kv": "^0.2.1",
+    "node-fetch": "^2.6.1"
+  },
+  "engines": {
+    "node": ">=14"
   },
   "scripts": {
     "start": "vercel dev"
