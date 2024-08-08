@@ -1,0 +1,13 @@
+{
+    "name": "hailuo-node",
+    "version": "1.0.0",
+    "main": "index.js",
+    "dependencies": {
+      "express": "^4.17.1",
+      "node-fetch": "^2.6.1",
+      "@vercel/kv": "^0.2.1"
+    },
+    "scripts": {
+      "start": "node index.js"
+    }
+  }
