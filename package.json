@@ -1,0 +1,14 @@
+{
+  "name": "hailuo-api",
+  "version": "1.0.0",
+  "description": "Hailuo API with load balancing",
+  "main": "api/audio-speech.js",
+  "dependencies": {
+    "@vercel/kv": "^0.2.1"
+  },
+  "scripts": {
+    "start": "vercel dev"
+  },
+  "author": "",
+  "license": "ISC"
+}
