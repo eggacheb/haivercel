@@ -1,8 +1,8 @@
-const { HAILUO_KV } = require('../lib/kv-store');
+const { getRefreshStatus } = require('../lib/kv-store');
 
 module.exports = async (req, res) => {
   try {
-    const lastRefresh = await HAILUO_KV.get('last_token_refresh');
+    const lastRefresh = await getRefreshStatus();
     if (lastRefresh) {
       res.status(200).json({
         message: 'Last refresh status retrieved successfully',
