@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "builds": [
-    { "src": "api/**/*.js", "use": "@vercel/node" }
-  ],
+  "functions": {
+    "api/**/*.js": {
+      "maxDuration": 60
+    }
+  },
   "routes": [
     { "src": "/v1/token", "dest": "/api/token.js" },
     { "src": "/v1/audio/speech", "dest": "/api/audio-speech.js" },
@@ -14,10 +16,5 @@
       "path": "/v1/token?action=refresh",
       "schedule": "0 0 * * 1"
     }
-  ],
-  "functions": {
-    "api/**/*.js": {
-      "maxDuration": 60
-    }
-  }
+  ]
 }
