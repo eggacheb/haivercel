@@ -12,7 +12,12 @@
   "crons": [
     {
       "path": "/v1/token?action=refresh",
-      "schedule": "0 0 * * *"
+      "schedule": "0 0 * * 1"
     }
-  ]
+  ],
+  "functions": {
+    "api/**/*.js": {
+      "maxDuration": 60
+    }
+  }
 }
