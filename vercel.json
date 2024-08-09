@@ -6,11 +6,12 @@
   "routes": [
     { "src": "/v1/token", "dest": "/api/token.js" },
     { "src": "/v1/audio/speech", "dest": "/api/audio-speech.js" },
+    { "src": "/v1/refresh-status", "dest": "/api/refresh-status.js" },
     { "src": "/", "dest": "/api/audio-speech.js" }
   ],
   "crons": [
     {
-      "path": "/api/token?action=refresh",
+      "path": "/v1/token?action=refresh",
       "schedule": "0 0 * * *"
     }
   ]
