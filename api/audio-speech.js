@@ -3,9 +3,7 @@ const apiSelector = require('../lib/api-selector');
 
 module.exports = async (req, res) => {
   try {
-    await apiSelector.loadResponseTimes();
-    const apiUrl = await apiSelector.selectAPI();
-    console.log(`Using API URL for audio speech: ${apiUrl}`);
+    // 移除 apiSelector.loadResponseTimes() 调用
     await handleAudioSpeech(req, res);
   } catch (error) {
     console.error('Unhandled error in audio-speech:', error);
